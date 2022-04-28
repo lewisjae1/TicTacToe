@@ -126,7 +126,7 @@
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
         android:text="New Game"
         android:textSize="24sp"
