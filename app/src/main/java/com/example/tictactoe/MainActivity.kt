@@ -25,6 +25,12 @@ class MainActivity : AppCompatActivity() {
         val button8 = findViewById<Button>(R.id.button8)
         val button9 = findViewById<Button>(R.id.button9)
 
+        val buttons = arrayOf(button1, button2, button3, button4, button5,
+                                button6, button7, button8, button9)
+
+        for(button in buttons){
+            buttonOnClick(button)
+        }
     }
 
     private fun buttonOnClick(button:Button) {
