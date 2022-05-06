@@ -26,4 +26,23 @@ class MainActivity : AppCompatActivity() {
         val button9 = findViewById<Button>(R.id.button9)
 
     }
+
+    private fun buttonOnClick(button:Button) {
+        val turn = findViewById<TextView>(R.id.PlayerTurn)
+
+        button.setOnClickListener {
+            if(turn.text == "Player X's Turn"){
+                button.text == "X"
+
+                turn.text = "Player O's Turn"
+            }
+            else if(turn.text == "Player O's Turn"){
+                button.text = "O"
+
+                turn.text = "Player'X turn"
+            }
+
+            button.isClickable = false
+        }
+    }
 }
