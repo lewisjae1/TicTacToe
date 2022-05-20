@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                                 arrayOf(button1, button5, button9), arrayOf(button3, button5, button7))
 
         for(button in buttons){
-            buttonOnClick(button)
+            buttonOnClick(button, winWays, buttons)
         }
 
         val newGameButton = findViewById<Button>(R.id.New_Game)
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         button.isClickable = true
     }
 
-    private fun buttonOnClick(button:Button) {
+    private fun buttonOnClick(button: Button, winWays: Array<Array<Button>>, buttons: Array<Button>) {
         val turn = findViewById<TextView>(R.id.PlayerTurn)
         turn.text = "Player X's Turn"
 
@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             button.isClickable = false
+            winnerCheck(winWays,buttons)
         }
     }
 }
