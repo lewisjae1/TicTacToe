@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         val buttons = arrayOf(button1, button2, button3, button4, button5,
                                 button6, button7, button8, button9)
 
+        val winWays = arrayOf(arrayOf(button1, button2, button3), arrayOf(button4, button5, button6),
+                                arrayOf(button7, button8, button9), arrayOf(button1, button4, button7),
+                                arrayOf(button2, button5, button8), arrayOf(button3, button6, button9),
+                                arrayOf(button1, button5, button9), arrayOf(button3, button5, button7))
+
         for(button in buttons){
             buttonOnClick(button)
         }
