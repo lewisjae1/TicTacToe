@@ -43,6 +43,36 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun winnerCheck(winWays: Array<Array<Button>>, buttons: Array<Button>) {
+        val message = findViewById<TextView>(R.id.PlayerTurn)
+        for(winWay in winWays) {
+            if(winWay[0].text == "X" && winWay[1].text == "X" && winWay[2].text == "X"){
+                message.text = "X won!"
+            }
+            else if(winWay[0].text == "O" && winWay[1].text == "O" && winWay[2].text == "O"){
+                message.text = "O won!"
+            }
+        }
+        if (tieStatus(buttons)){
+            message.text = "Tied!"
+        }
+        if(message.text == "X won!" || message.text == "O won!"){
+            for (button in buttons){
+                button.isClickable = false
+            }
+        }
+    }
+
+    private fun tieStatus(buttons: Array<Button>): Boolean {
+        var tied = true
+        for (button in buttons) {
+            if(button.isClickable == true) {
+                tied = false
+            }
+        }
+        return tied
+    }
+
     private fun buttonReset(button: Button) {
         button.text = ""
         button.isClickable = true
