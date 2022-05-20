@@ -10,11 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val newGameButton = findViewById<Button>(R.id.New_Game)
-        newGameButton.setOnClickListener {
-            recreate();
-        }
-
         val button1 = findViewById<Button>(R.id.button1)
         val button2 = findViewById<Button>(R.id.button2)
         val button3 = findViewById<Button>(R.id.button3)
@@ -31,6 +26,21 @@ class MainActivity : AppCompatActivity() {
         for(button in buttons){
             buttonOnClick(button)
         }
+
+        val newGameButton = findViewById<Button>(R.id.New_Game)
+        newGameButton.setOnClickListener {
+            for(button in buttons){
+                buttonReset(button)
+            }
+
+            val turn = findViewById<TextView>(R.id.PlayerTurn)
+            turn.text = "Player X's Turn"
+        }
+    }
+
+    private fun buttonReset(button: Button) {
+        button.text = ""
+        button.isClickable = true
     }
 
     private fun buttonOnClick(button:Button) {
